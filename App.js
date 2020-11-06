@@ -2,8 +2,9 @@ import * as Font from 'expo-font';
 import { AppLoading } from "expo";
 
 import React, { useState } from 'react';
-import { StyleSheet, View } from "react-native"
+import { StyleSheet, View, Text } from "react-native"
 import StarScreen from "./src/screens/start.screen";
+import {  } from "react-native-web";
 
 const fetchFonts = () => {
     return Font.loadAsync({
