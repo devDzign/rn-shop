@@ -1,10 +1,15 @@
+import 'react-native-gesture-handler';
 import * as Font from 'expo-font';
 import { AppLoading } from "expo";
 
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from "react-native"
-import StarScreen from "./src/screens/start.screen";
-import {  } from "react-native-web";
+import { StyleSheet, View } from "react-native"
+
+import { Provider } from "react-redux";
+import { store } from "./src/store/store";
+
+import ProductsOverviewScreen from "./src/screens/shop/products-overview.screen";
+import RootNavigator from "./src/navigation/root.navigator";
 
 const fetchFonts = () => {
     return Font.loadAsync({
@@ -27,9 +32,10 @@ export default function App() {
     }
 
     return (
-        <View style={styles.container}>
-            <StarScreen/>
-        </View>
+        <Provider store={store}>
+            <RootNavigator />
+        </Provider>
+
     );
 }
 
