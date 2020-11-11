@@ -1,17 +1,54 @@
 import React from 'react';
+import { ScrollView, Image, Button, Text, View, StyleSheet } from 'react-native';
+import Colors from '../../constants/color'
 
-import { Text, View, StyleSheet } from 'react-native';
-
-const ProductDetailScreen = () => {
+const ProductDetailScreen = (props) => {
+    const {route} = props
+    const product = route.params.product;
     return (
-        <View>
-            <Text>
-                Product Detail Screen
-            </Text>
-        </View>
+        <ScrollView>
+            <Image style={styles.image} source={{ uri: product.imageUrl }} />
+            <View style={styles.actions}>
+                <Button
+                    color={Colors.primary}
+                    title="Add to Cart"
+                    onPress={() => {}}
+                />
+            </View>
+            <Text style={styles.price}>${product.price.toFixed(2)}</Text>
+            <Text style={styles.description}>{product.description}</Text>
+        </ScrollView>
     );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    image: {
+        width: '100%',
+        height: 300
+    },
+    actions: {
+        marginVertical: 10,
+        alignItems: 'center'
+    },
+    price: {
+        fontSize: 20,
+        color: '#888',
+        textAlign: 'center',
+        marginVertical: 20,
+        fontFamily: 'open-sans-bold'
+    },
+    description: {
+        fontFamily: 'open-sans',
+        fontSize: 14,
+        textAlign: 'center',
+        marginHorizontal: 20
+    }
+});
+
+export const screenOptions = navData => {
+    return {
+        headerTitle: navData.route.params.product.title
+    };
+};
 
 export default ProductDetailScreen;

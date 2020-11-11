@@ -1,10 +1,13 @@
 import React from "react";
-import {createStackNavigator} from "@react-navigation/stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import ProductsOverviewScreen, {
     screenOptions as productsOverviewScreenOptions
 } from '../screens/shop/products-overview.screen';
+import ProductDetailScreen, {
+    screenOptions as productDetailScreenOptions
+} from "../screens/shop/product-detaill.screen";
 
-import Colors from '../constants/color'
+import Colors from '../constants/color';
 
 const defaultNavOptions = {
     headerStyle: {
@@ -29,6 +32,11 @@ const ProductsStackNavigator = (props) => {
                 name={'products-overView'}
                 component={ProductsOverviewScreen}
                 options={productsOverviewScreenOptions}
+            />
+            <ProductsStack.Screen
+                name={'product-detail'}
+                component={ProductDetailScreen}
+                options={productDetailScreenOptions}
             />
         </ProductsStack.Navigator>
     )

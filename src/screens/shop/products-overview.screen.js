@@ -7,8 +7,6 @@ import HeaderButton from '../../components/ui/custom-header-button.ui.component'
 import ProductItem from "../../components/shop/product-item.component";
 
 
-
-
 const ProductsOverviewScreen = (props) => {
 
     const products = useSelector(state => state.products.availableProducts)
@@ -19,7 +17,9 @@ const ProductsOverviewScreen = (props) => {
                 image={item.imageUrl}
                 title={item.title}
                 price={item.price}
-                onViewDetail={() => {}}
+                onViewDetail={() => {
+                    props.navigation.navigate('product-detail', {product: item})
+                }}
                 onAddToCart={() => {}}
             />
 
