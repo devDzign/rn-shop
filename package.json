@@ -30,6 +30,7 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "@expo/vector-icons": "^10.2.1",
+    "@react-navigation/drawer": "^5.11.3",
     "expo-font": "^8.3.0",
     "react-devtools": "^4.9.0",
     "react-redux": "^7.2.2"

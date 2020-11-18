@@ -1,7 +1,10 @@
 import React from 'react';
 import {createStackNavigator} from "@react-navigation/stack";
-import OrderScreen from "../screens/shop/order.screen";
+
 import Colors from "../constants/color";
+import OrdersScreen, {
+    screenOptions as ordersScreenOptions
+} from "../screens/shop/orders.screen";
 
 const defaultNavOptions = {
     headerStyle: {
@@ -18,17 +21,17 @@ const defaultNavOptions = {
 
 const OrdersStackNavigator = createStackNavigator();
 
-const OrderNavigator = () => {
+const OrdersNavigator = () => {
     return (
         <OrdersStackNavigator.Navigator screenOptions={defaultNavOptions}>
             <OrdersStackNavigator.Screen
                 name="Orders"
-                component={OrderScreen}
-                // options={ordersScreenOptions}
+                component={OrdersScreen}
+                options={ordersScreenOptions}
             />
         </OrdersStackNavigator.Navigator>
     );
 };
 
-export default OrderNavigator;
+export default OrdersNavigator;
 

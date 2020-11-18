@@ -4,7 +4,6 @@ class CartItem {
     title;
     sum;
 
-
     constructor(quantity, price, title, sum) {
         this.quantity = quantity;
         this.price = price;

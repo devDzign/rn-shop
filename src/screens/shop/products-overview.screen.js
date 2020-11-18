@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FlatList, Text, View, StyleSheet, Platform, Image } from 'react-native';
+import { FlatList, StyleSheet, Platform } from 'react-native';
 import { useSelector, useDispatch } from "react-redux";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from '../../components/ui/custom-header-button.ui.component';
@@ -38,6 +38,20 @@ const ProductsOverviewScreen = (props) => {
     );
 };
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    tinyLogo: {
+            width: '100%',
+            height: 200,
+    }
+});
+
+export default ProductsOverviewScreen;
+
 export const screenOptions = navData => {
     return {
         headerTitle: 'All Products',
@@ -47,7 +61,7 @@ export const screenOptions = navData => {
                     title="Menu"
                     iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
                     onPress={() => {
-
+                        navData.navigation.toggleDrawer();
                     }}
                 />
             </HeaderButtons>
@@ -65,17 +79,3 @@ export const screenOptions = navData => {
         )
     };
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    tinyLogo: {
-            width: '100%',
-            height: 200,
-    }
-});
-
-export default ProductsOverviewScreen;

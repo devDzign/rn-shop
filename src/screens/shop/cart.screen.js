@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Colors from '../../constants/color'
 import CartItem from "../../components/shop/cart-item.components";
 import { removeFromCart } from "../../store/cart/cart.actions";
+import { addOrder } from "../../store/order/order.actions";
 
 const CartScreen = (props) => {
 
@@ -54,6 +55,9 @@ const CartScreen = (props) => {
                     style={Colors.accent}
                     title={"OrderNow"}
                     disabled={cartItems.length === 0}
+                    onPress={()=> {
+                        dispatch(addOrder(cartItems, cartTotalAmount))
+                    }}
                 />
             </View>
             <FlatList
