@@ -8,6 +8,14 @@ export const addToCart = product => {
              product: product
         }
     }
-
 }
 
+
+export const removeFromCart = product => {
+    return {
+        type: cartTypes.REMOVE_FROM_CART,
+        payload: {
+            productId: product.id
+        }
+    }
+}

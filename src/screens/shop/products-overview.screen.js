@@ -47,7 +47,7 @@ export const screenOptions = navData => {
                     title="Menu"
                     iconName={Platform.OS === 'android' ? 'md-menu' : 'ios-menu'}
                     onPress={() => {
-                        navData.navigation.toggleDrawer();
+
                     }}
                 />
             </HeaderButtons>
