@@ -11,7 +11,7 @@ const OrdersScreen = () => {
 
     const renderItemOrder = ({item}) => {
         return (
-            <Text>{item.totalAmount}</Text>
+            <Text>{item.totalAmount.toFixed(2)}</Text>
         )
     }
 

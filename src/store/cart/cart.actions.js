@@ -19,3 +19,9 @@ export const removeFromCart = product => {
         }
     }
 }
+
+export const resetCart = () => {
+    return {
+        type: cartTypes.RESET_CART,
+    }
+}

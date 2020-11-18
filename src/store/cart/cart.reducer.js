@@ -1,6 +1,7 @@
 import PRODUCTS from "../../utils/dummy-data";
 import { cartTypes } from "./cart.types";
 import CartItem from "../../models/cart-item";
+import { orderTypes } from "../order/order.types";
 
 const initialState = {
     items: {},
@@ -39,9 +40,7 @@ const CartReducer = (state = initialState, actions) => {
                 items: {...state.items, [addedProduct.id]: newCartItem},
                 totalAmount: state.totalAmount + productPrice
             }
-
         case cartTypes.REMOVE_FROM_CART:
-
             const selectedCartItem = state.items[actions.payload.productId];
             const currentQty = selectedCartItem.quantity;
             let updatedCartItems;
@@ -66,6 +65,8 @@ const CartReducer = (state = initialState, actions) => {
                 items: updatedCartItems,
                 totalAmount: state.totalAmount - selectedCartItem.price
             };
+        case orderTypes.ADD_ORDER:
+            return initialState;
     }
 
     return state;
