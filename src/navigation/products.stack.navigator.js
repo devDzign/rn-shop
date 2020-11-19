@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import Colors from '../constants/color';
-
+import { Ionicons } from '@expo/vector-icons';
 import ProductsOverviewScreen, {
     screenOptions as productsOverviewScreenOptions
 } from '../screens/shop/products-overview.screen';

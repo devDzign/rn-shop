@@ -14,7 +14,7 @@ const drawerNavigatorOptions = {
         fontFamily: 'open-sans-bold',
         display: 'flex',
         flex:1,
-        marginLeft: -15
+        marginLeft: -30
     }
 };
 
